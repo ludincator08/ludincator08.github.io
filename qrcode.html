@@ -14,19 +14,23 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             height: 100vh;
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
         }
 
         /* Card-style Container */
         .container {
             background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
-            padding: 40px 50px;
+            padding: 60px 50px 40px 50px; /* Added top padding */
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
             border-radius: 20px;
             width: 100%;
             max-width: 450px;
-            text-align: center;
+            margin-top: 10%; /* Provide top space in larger viewports */
         }
 
         h1 {
@@ -37,7 +41,7 @@
         }
 
         p {
-            color: #555;
+            color: #ffffff;
             margin-bottom: 20px;
             font-size: 16px;
         }
@@ -120,10 +124,28 @@
             background-color: #e52e71; /* Change to a darker color on hover */
         }
 
+        /* Footer Styles */
+        footer {
+            background: linear-gradient(135deg, #ff8a00, #e52e71); /* Match the website's background gradient */
+            color: white;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            margin-top: auto;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
         /* Mobile responsiveness */
         @media (max-width: 480px) {
             .container {
-                padding: 30px 25px;
+                padding: 40px 25px;
+                margin-top: 30px; /* Add some space at the top */
             }
 
             h1 {
@@ -132,6 +154,10 @@
 
             button {
                 width: 100%;
+            }
+
+            #qrCode img {
+                width: 200px; /* Adjust QR code size for smaller screens */
             }
         }
 
@@ -149,6 +175,11 @@
 
         <div id="qrCode"></div>
     </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Designed and Developed by Luds</p>
+    </footer>
 
     <script>
         function generateQRCode() {
